@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volcano Prod | Full-Service Marketing Agency</title>
+    <title>Volcano Prod | Marketing That Erupts</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
@@ -14,15 +14,18 @@
         <div class="container nav-container">
             <a href="#" class="logo">
                 <span class="logo-icon">🌋</span>
-                <span class="logo-text">Volcano<span class="accent">Prod</span></span>
+                <span class="logo-text">VOLCANO PROD</span>
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact" class="btn btn-nav">Get Started</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="nav-right">
+                <a href="#contact" class="btn btn-nav">Get Started <span class="arrow">→</span></a>
+            </div>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -33,183 +36,201 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="hero-bg"></div>
+        <div class="hero-bg">
+            <div class="hero-glow"></div>
+        </div>
         <div class="container hero-content">
+            <!-- Announcement Badge -->
+            <div class="announcement">
+                <span class="announcement-dot"></span>
+                <span>New</span>
+                <span class="announcement-text">Volcano Prod 2.0 is now live</span>
+                <span class="arrow-small">›</span>
+            </div>
+
             <h1 class="hero-title">
-                We Make Brands <span class="accent">Erupt</span>
+                Marketing that<br>
+                <em class="hero-italic">erupts</em> with you.
             </h1>
             <p class="hero-subtitle">
-                Full-service marketing agency that turns bold ideas into explosive growth. 
-                Strategy, creativity, and data — all under one roof.
+                The all-in-one agency for brands who want clarity,<br>
+                speed, and explosive growth.
             </p>
             <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">Start Your Project</a>
-                <a href="#portfolio" class="btn btn-outline">See Our Work</a>
+                <a href="#contact" class="btn btn-primary">Start Free Consultation <span class="arrow">→</span></a>
             </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">150+</span>
-                    <span class="stat-label">Clients Served</span>
+            <div class="hero-trust-points">
+                <span>◆ No commitment</span>
+                <span>◆ Results in 30 days</span>
+                <span>◆ Cancel anytime</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Cards Section -->
+    <section class="features" id="services">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-card-inner">
+                        <div class="feature-icon-wrap">
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>Unify your brand</h3>
+                        <p>Connect all your channels and turn scattered efforts into a single source of growth.</p>
+                        <div class="feature-visual">
+                            <div class="visual-data-flow">
+                                <div class="data-source"><span>📱</span></div>
+                                <div class="data-source"><span>🌐</span></div>
+                                <div class="data-source"><span>📊</span></div>
+                                <div class="data-source"><span>💻</span></div>
+                                <div class="data-connector"></div>
+                                <div class="data-target">🌋</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Projects Delivered</span>
+                <div class="feature-card">
+                    <div class="feature-card-inner">
+                        <div class="feature-icon-wrap">
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                            </svg>
+                        </div>
+                        <h3>Surface what matters</h3>
+                        <p>Strategy that cuts through noise and highlights the insights that drive impact.</p>
+                        <div class="feature-visual">
+                            <div class="visual-graph">
+                                <div class="graph-line"></div>
+                                <div class="graph-badge">↑ 32%</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat">
-                    <span class="stat-number">98%</span>
-                    <span class="stat-label">Client Retention</span>
+                <div class="feature-card">
+                    <div class="feature-card-inner">
+                        <div class="feature-icon-wrap">
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3>Act with confidence</h3>
+                        <p>Built-in transparency and reporting so your team can move fast, without risk.</p>
+                        <div class="feature-visual">
+                            <div class="visual-shield">
+                                <div class="shield-ring ring-1"></div>
+                                <div class="shield-ring ring-2"></div>
+                                <div class="shield-ring ring-3"></div>
+                                <div class="shield-center">🔥</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <p class="trust-label">TRUSTED BY AMBITIOUS BRANDS</p>
+            <div class="trust-logos">
+                <span class="trust-logo">▲ Acme</span>
+                <span class="trust-logo">✦ LUMEN</span>
+                <span class="trust-logo">◈ Nova</span>
+                <span class="trust-logo">◉ PULSE</span>
+                <span class="trust-logo">✧ atelier</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Detail Section -->
+    <section class="services-detail" id="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our <span class="accent">Services</span></h2>
-                <p class="section-subtitle">Everything your brand needs to dominate the market</p>
+                <h2 class="section-title">Everything your brand needs to <em class="hero-italic">dominate</em></h2>
+                <p class="section-subtitle">Full-service marketing — strategy to execution, all under one roof.</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📱</div>
+                <div class="service-item">
+                    <div class="service-number">01</div>
                     <h3>Social Media Management</h3>
-                    <p>Strategic content creation and community management that builds loyal audiences across all platforms.</p>
+                    <p>Strategic content creation and community management across all platforms.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
+                <div class="service-item">
+                    <div class="service-number">02</div>
                     <h3>Paid Advertising</h3>
-                    <p>Data-driven PPC campaigns on Google, Meta, TikTok, and beyond that maximize your ROAS.</p>
+                    <p>Data-driven PPC campaigns on Google, Meta, TikTok that maximize ROAS.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🔍</div>
-                    <h3>SEO & Content</h3>
-                    <p>Dominate search results with technical SEO, link building, and content that converts.</p>
+                <div class="service-item">
+                    <div class="service-number">03</div>
+                    <h3>SEO & Content Strategy</h3>
+                    <p>Dominate search results with technical SEO and content that converts.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3>Branding & Design</h3>
-                    <p>Visual identities that turn heads. Logos, brand guides, and creative assets that stand out.</p>
+                <div class="service-item">
+                    <div class="service-number">04</div>
+                    <h3>Branding & Identity</h3>
+                    <p>Visual identities that turn heads — logos, brand guides, creative assets.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🎬</div>
+                <div class="service-item">
+                    <div class="service-number">05</div>
                     <h3>Video Production</h3>
-                    <p>From concept to final cut — commercials, social content, and brand films that captivate.</p>
+                    <p>Commercials, social content, and brand films from concept to final cut.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">💻</div>
-                    <h3>Web Design & Dev</h3>
-                    <p>High-converting websites and landing pages that look stunning and drive results.</p>
+                <div class="service-item">
+                    <div class="service-number">06</div>
+                    <h3>Web Design & Development</h3>
+                    <p>High-converting websites and landing pages that look stunning.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">📧</div>
+                <div class="service-item">
+                    <div class="service-number">07</div>
                     <h3>Email Marketing</h3>
-                    <p>Automated sequences and campaigns that nurture leads and boost customer lifetime value.</p>
+                    <p>Automated sequences that nurture leads and boost lifetime value.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🤝</div>
+                <div class="service-item">
+                    <div class="service-number">08</div>
                     <h3>Influencer Marketing</h3>
-                    <p>Strategic partnerships with creators that amplify your brand to the right audiences.</p>
+                    <p>Strategic creator partnerships that amplify reach to the right audience.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <h2 class="section-title">Why <span class="accent">Volcano Prod?</span></h2>
-                    <p class="about-text">
-                        We're not your average agency. We're a team of strategists, creatives, and data nerds 
-                        who believe marketing should be as powerful as a volcanic eruption — impossible to ignore.
-                    </p>
-                    <p class="about-text">
-                        Founded with a simple mission: help brands of all sizes achieve extraordinary growth 
-                        through bold, innovative marketing strategies backed by real data.
-                    </p>
-                    <div class="about-values">
-                        <div class="value">
-                            <span class="value-icon">⚡</span>
-                            <div>
-                                <h4>Speed & Agility</h4>
-                                <p>We move fast and adapt faster. No bureaucratic slowdowns.</p>
-                            </div>
-                        </div>
-                        <div class="value">
-                            <span class="value-icon">📊</span>
-                            <div>
-                                <h4>Data-Driven</h4>
-                                <p>Every decision backed by analytics. No guesswork.</p>
-                            </div>
-                        </div>
-                        <div class="value">
-                            <span class="value-icon">🔥</span>
-                            <div>
-                                <h4>Bold Creativity</h4>
-                                <p>We push boundaries and create work that gets noticed.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="about-img-placeholder">
-                        <span>🌋</span>
-                        <p>Your Team Photo Here</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
+    <!-- Portfolio / Results Section -->
+    <section class="results" id="portfolio">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our <span class="accent">Work</span></h2>
-                <p class="section-subtitle">Results that speak louder than words</p>
+                <h2 class="section-title">Results that <em class="hero-italic">speak</em></h2>
+                <p class="section-subtitle">We don't just promise growth — we deliver it.</p>
             </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #ff4500, #ff8c00);">
-                        <span class="portfolio-category">E-Commerce</span>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>StyleNova Rebrand</h3>
-                        <p>Complete brand overhaul resulting in 340% increase in online sales.</p>
-                        <span class="portfolio-result">+340% Revenue</span>
-                    </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-metric">+340%</div>
+                    <h3>StyleNova</h3>
+                    <p>E-commerce revenue increase after complete rebrand and paid media overhaul.</p>
+                    <span class="result-tag">E-Commerce</span>
                 </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #8b00ff, #ff0080);">
-                        <span class="portfolio-category">SaaS</span>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>CloudSync Launch</h3>
-                        <p>Go-to-market strategy that acquired 10K users in the first month.</p>
-                        <span class="portfolio-result">10K Users in 30 Days</span>
-                    </div>
+                <div class="result-card">
+                    <div class="result-metric">10K</div>
+                    <h3>CloudSync</h3>
+                    <p>Users acquired in the first 30 days through go-to-market strategy.</p>
+                    <span class="result-tag">SaaS</span>
                 </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #00d4ff, #0066ff);">
-                        <span class="portfolio-category">Real Estate</span>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>LuxeHomes Digital</h3>
-                        <p>SEO and paid media strategy generating 200+ qualified leads monthly.</p>
-                        <span class="portfolio-result">200+ Leads/Month</span>
-                    </div>
+                <div class="result-card">
+                    <div class="result-metric">200+</div>
+                    <h3>LuxeHomes</h3>
+                    <p>Qualified leads generated monthly through SEO and paid media.</p>
+                    <span class="result-tag">Real Estate</span>
                 </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #00ff88, #00b4d8);">
-                        <span class="portfolio-category">Restaurant</span>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>FreshBite Social</h3>
-                        <p>Social media strategy that grew following from 2K to 150K in 6 months.</p>
-                        <span class="portfolio-result">75x Follower Growth</span>
-                    </div>
+                <div class="result-card">
+                    <div class="result-metric">75x</div>
+                    <h3>FreshBite</h3>
+                    <p>Social media follower growth in just 6 months of management.</p>
+                    <span class="result-tag">Restaurant</span>
                 </div>
             </div>
         </div>
@@ -219,13 +240,12 @@
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">What Clients <span class="accent">Say</span></h2>
-                <p class="section-subtitle">Don't just take our word for it</p>
+                <h2 class="section-title">What clients <em class="hero-italic">say</em></h2>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Volcano Prod transformed our entire digital presence. Revenue is up 300% and we're getting leads we never thought possible."</p>
+                    <p>"Volcano Prod transformed our entire digital presence. Revenue is up 300% and we're getting leads we never thought possible."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">SK</div>
                         <div>
@@ -236,7 +256,7 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"The team's creativity and speed is unmatched. They delivered our rebrand in half the time we expected and the results exceeded all targets."</p>
+                    <p>"The team's creativity and speed is unmatched. They delivered our rebrand in half the time and results exceeded all targets."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">MR</div>
                         <div>
@@ -247,7 +267,7 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Working with Volcano Prod feels like having an in-house team that actually gets our brand. Best marketing investment we've ever made."</p>
+                    <p>"Working with Volcano Prod feels like having an in-house team that actually gets our brand. Best investment we've made."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">JL</div>
                         <div>
@@ -260,24 +280,35 @@
         </div>
     </section>
 
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <h2>Ready to make your brand <em class="hero-italic">erupt?</em></h2>
+                <p>Start with a free consultation. No commitment, no pressure — just a conversation about growth.</p>
+                <a href="#contact" class="btn btn-primary btn-lg">Start Free Consultation <span class="arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h2 class="section-title">Let's <span class="accent">Talk</span></h2>
-                    <p>Ready to make your brand erupt? Drop us a line and let's create something explosive together.</p>
+                    <h2 class="section-title">Let's <em class="hero-italic">talk</em></h2>
+                    <p>Drop us a line and let's create something explosive together.</p>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <span class="contact-icon">📧</span>
+                            <span>📧</span>
                             <span>hello@volcanoprod.com</span>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">📞</span>
+                            <span>📞</span>
                             <span>+1 (555) VOLCANO</span>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">📍</span>
+                            <span>📍</span>
                             <span>Los Angeles, CA</span>
                         </div>
                     </div>
@@ -312,7 +343,7 @@
                     <div class="form-group">
                         <textarea placeholder="Tell us about your project..." rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full">Send Message 🚀</button>
+                    <button type="submit" class="btn btn-primary btn-full">Send Message <span class="arrow">→</span></button>
                 </form>
             </div>
         </div>
@@ -325,7 +356,7 @@
                 <div class="footer-brand">
                     <a href="#" class="logo">
                         <span class="logo-icon">🌋</span>
-                        <span class="logo-text">Volcano<span class="accent">Prod</span></span>
+                        <span class="logo-text">VOLCANO PROD</span>
                     </a>
                     <p>Full-service marketing agency making brands erupt since day one.</p>
                 </div>
