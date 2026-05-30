@@ -103,3 +103,19 @@ window.addEventListener('mousemove', (e) => {
         heroGlow.style.transform = `translate(calc(-50% + ${x}px), ${y}px)`;
     }
 });
+
+// ===== INTERACTIVE LOGO TILT =====
+const heroLogo = document.getElementById('heroLogo');
+
+if (heroLogo) {
+    heroLogo.addEventListener('mousemove', (e) => {
+        const rect = heroLogo.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        heroLogo.style.transform = `perspective(600px) rotateY(${x * 20}deg) rotateX(${-y * 20}deg) scale(1.08)`;
+    });
+
+    heroLogo.addEventListener('mouseleave', () => {
+        heroLogo.style.transform = '';
+    });
+}
