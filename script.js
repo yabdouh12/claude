@@ -122,6 +122,81 @@ if (heroLogo) {
     });
 }
 
+// ===== PORTFOLIO VIDEO LIGHTBOX =====
+(function () {
+    const thumb = document.getElementById('videoThumb');
+    const modal = document.getElementById('videoModal');
+    const embed = document.getElementById('videoEmbed');
+    const closeBtn = document.getElementById('videoClose');
+    const backdrop = document.getElementById('videoBackdrop');
+
+    if (!thumb || !modal || !embed) return;
+
+    const raw = (thumb.dataset.video || '').trim();
+
+    // Detect a channel/playlist link (can't be embedded as a single video)
+    const isChannel = /@|\/channel\/|\/c\/|\/user\/|list=/.test(raw);
+
+    // Accepts a raw ID, a watch URL, a youtu.be link, or a shorts link
+    function extractId(value) {
+        if (!value) return '';
+        value = value.trim();
+        if (!/[\/?=&.]/.test(value)) return value; // already a bare ID
+        const patterns = [
+            /(?:youtube\.com\/watch\?(?:.*&)?v=)([\w-]{11})/,
+            /(?:youtu\.be\/)([\w-]{11})/,
+            /(?:youtube\.com\/(?:embed|shorts)\/)([\w-]{11})/
+        ];
+        for (const re of patterns) {
+            const m = value.match(re);
+            if (m) return m[1];
+        }
+        return value;
+    }
+
+    // ----- Channel link: open YouTube in a new tab -----
+    if (isChannel) {
+        thumb.addEventListener('click', () => {
+            window.open(raw, '_blank', 'noopener');
+        });
+        return;
+    }
+
+    // ----- Single video: open in lightbox -----
+    const videoId = extractId(raw);
+
+    // Use the YouTube thumbnail as the preview image
+    if (videoId) {
+        thumb.style.backgroundImage =
+            `url(https://img.youtube.com/vi/${videoId}/maxresdefault.jpg)`;
+    }
+
+    function openModal() {
+        embed.innerHTML =
+            `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"` +
+            ` title="Volcano Prod showreel" allow="accelerometer; autoplay; clipboard-write;` +
+            ` encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        // Clear the iframe so the video stops playing
+        setTimeout(() => { embed.innerHTML = ''; }, 300);
+    }
+
+    thumb.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+})();
+
 // ===== 🌋 VOLCANO ERUPTION EFFECT =====
 (function () {
     if (!heroLogo) return;

@@ -264,8 +264,32 @@
                     <span class="result-tag">Restaurant</span>
                 </div>
             </div>
+
+            <!-- Video Showcase -->
+            <div class="video-showcase">
+                <!-- For a channel: use the channel URL. For a single video: paste a YouTube video link/ID and it opens in a popup player -->
+                <div class="video-thumb video-thumb--channel" id="videoThumb" data-video="https://www.youtube.com/@Volcanoprod-1">
+                    <div class="video-thumb-overlay"></div>
+                    <button class="video-play-btn" aria-label="Watch on YouTube">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                    <div class="video-showcase-label">
+                        <span class="video-eyebrow">▶ OUR YOUTUBE</span>
+                        <h3>Watch our work in action</h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Video Modal / Lightbox -->
+    <div class="video-modal" id="videoModal" aria-hidden="true">
+        <div class="video-modal-backdrop" id="videoBackdrop"></div>
+        <div class="video-modal-content">
+            <button class="video-modal-close" id="videoClose" aria-label="Close video">&times;</button>
+            <div class="video-embed" id="videoEmbed"></div>
+        </div>
+    </div>
 
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
