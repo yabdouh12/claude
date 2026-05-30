@@ -45,7 +45,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Add fade-in to elements with staggered delays
-document.querySelectorAll('.feature-card, .service-item, .result-card, .testimonial-card').forEach((el, i) => {
+document.querySelectorAll('.feature-card, .service-item, .result-card, .testimonial-card, .team-card').forEach((el, i) => {
     el.classList.add('fade-in');
     el.dataset.delay = (i % 4) * 100;
     observer.observe(el);
