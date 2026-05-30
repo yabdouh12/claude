@@ -344,3 +344,105 @@ if (heroLogo) {
     heroLogo.addEventListener('click', erupt);
     heroLogo.addEventListener('touchstart', (e) => { e.preventDefault(); erupt(); }, { passive: false });
 })();
+
+
+
+// ===== 🔥 FLAME CURSOR TRAIL (subtle) =====
+(function () {
+    // Skip on touch / coarse-pointer devices
+    if (window.matchMedia('(hover: none)').matches) return;
+
+    const canvas = document.getElementById('flameTrail');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    let dpr = Math.min(window.devicePixelRatio || 1, 2);
+    function resize() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = window.innerWidth * dpr;
+        canvas.height = window.innerHeight * dpr;
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const colors = ['#fff3b0', '#ffd60a', '#ff8c00', '#ff6b00', '#ff4500'];
+    const particles = [];
+    let mouseX = -100, mouseY = -100;
+    let lastSpawn = 0;
+    let active = false;
+
+    function rand(min, max) { return Math.random() * (max - min) + min; }
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        active = true;
+        // Restart loop if it stopped
+        if (particles.length === 0) requestAnimationFrame(loop);
+    });
+
+    document.addEventListener('mouseleave', () => { active = false; });
+
+    function spawn() {
+        // Throttle: small ember every ~30ms
+        const now = performance.now();
+        if (now - lastSpawn < 28) return;
+        lastSpawn = now;
+
+        const count = 1 + Math.floor(Math.random() * 2); // 1–2 embers per spawn
+        for (let i = 0; i < count; i++) {
+            particles.push({
+                x: mouseX + rand(-3, 3),
+                y: mouseY + rand(-2, 2),
+                vx: rand(-0.4, 0.4),
+                vy: rand(-1.6, -0.6),     // drift upward like a flame
+                size: rand(2, 4.5),
+                life: 1,
+                decay: rand(0.025, 0.05),
+                color: colors[Math.floor(Math.random() * colors.length)]
+            });
+        }
+        // Cap to prevent any chance of buildup
+        if (particles.length > 80) particles.splice(0, particles.length - 80);
+    }
+
+    function loop() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        if (active) spawn();
+
+        for (let i = particles.length - 1; i >= 0; i--) {
+            const p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy -= 0.03;             // accelerate upward (flame buoyancy)
+            p.size *= 0.96;
+            p.life -= p.decay;
+
+            if (p.life <= 0 || p.size < 0.4) {
+                particles.splice(i, 1);
+                continue;
+            }
+
+            ctx.globalAlpha = Math.max(0, p.life * 0.85);
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = p.color;
+            ctx.fillStyle = p.color;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        ctx.globalAlpha = 1;
+        ctx.shadowBlur = 0;
+
+        if (particles.length > 0 || active) {
+            requestAnimationFrame(loop);
+        } else {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    }
+})();
